@@ -19,12 +19,13 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: false })
 const names = ["Alex", "Jordan", "Chris", "Sam", "Taylor", "Jamie"];
 const comments = [
   "LOL 😂",
-  "You're amazing!",
-  "First time here!",
+  "Mamaw",
+  "Pansinin mo naman ako idol",
   "This is awesome 🔥",
-  "Hi from Philippines 🇵🇭",
-  "Keep going!",
-  "HAHAHA"
+  "Hi from Philippines",
+  "Huwaw",
+  "HAHAHA",
+  "TANGINA GALING"
 ];
 
 const reactions = ["like", "laugh", "wow"];
