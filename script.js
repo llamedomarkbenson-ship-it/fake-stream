@@ -16,9 +16,9 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: false })
   });
 
 // Fake data
-const names = ["Alex", "Jordan", "Chris", "Sam", "Taylor", "Jamie"];
+const names = ["Bornok", "LeBron", "DU30", "Malupiton", "iShowSpeed", "MrBeast"];
 const comments = [
-  "LOL ",
+  "LOL",
   "Mamaw",
   "Pansinin mo naman ako idol",
   "This is awesome 🔥",
@@ -28,7 +28,8 @@ const comments = [
   "ANG GALING TANGINA",
   "Shout out po",
   "Pogi",
-  "Nganong walay security guard ang police station?"
+  "Nganong walay security guard ang police station?",
+  "Taga san ka?"
 ];
 
 const reactions = ["like", "laugh", "wow"];
