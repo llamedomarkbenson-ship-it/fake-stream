@@ -1,23 +1,25 @@
-/* General reset */
+/* Reset */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #111;
+  background: #000;
   color: white;
+  overflow: hidden;
 }
 
-/* Main layout */
+/* Layout */
 .container {
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
 
-/* Video section */
+/* Video */
 .video-section {
   position: relative;
   flex: 2;
   background: black;
+  overflow: hidden;
 }
 
 video {
@@ -29,41 +31,84 @@ video {
 /* LIVE badge */
 .live-badge {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 12px;
+  left: 12px;
   background: red;
-  padding: 5px 10px;
+  padding: 6px 12px;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 20px;
+  font-size: 14px;
 }
 
 /* Viewer count */
 .viewer-count {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 12px;
+  right: 12px;
   font-size: 14px;
+  background: rgba(0,0,0,0.5);
+  padding: 5px 10px;
+  border-radius: 20px;
 }
 
-/* Chat section */
+/* Chat */
 .chat-section {
-  flex: 1;
-  overflow-y: auto;
-  padding: 10px;
-  background: #1a1a1a;
+  position: absolute;
+  bottom: 60px;
+  left: 10px;
+  width: 70%;
+  max-height: 40%;
+  overflow: hidden;
 }
 
 .chat-message {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 6px 10px;
+  border-radius: 15px;
   margin-bottom: 6px;
-  font-size: 14px;
-  line-height: 1.4;
+  font-size: 13px;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Chat animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Reactions bar */
 .reactions {
-  padding: 10px;
-  background: #222;
+  position: absolute;
+  right: 10px;
+  bottom: 80px;
   display: flex;
-  justify-content: space-around;
-  font-size: 18px;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 20px;
+}
+
+/* Floating reactions */
+.floating {
+  position: absolute;
+  bottom: 80px;
+  right: 20px;
+  font-size: 24px;
+  animation: floatUp 2s linear forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px) scale(1.5);
+    opacity: 0;
+  }
 }
