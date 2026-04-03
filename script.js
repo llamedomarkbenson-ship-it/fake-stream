@@ -18,14 +18,17 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: false })
 // Fake data
 const names = ["Alex", "Jordan", "Chris", "Sam", "Taylor", "Jamie"];
 const comments = [
-  "LOL 😂",
+  "LOL ",
   "Mamaw",
   "Pansinin mo naman ako idol",
   "This is awesome 🔥",
-  "Hi from Philippines 🇵🇭",
+  "Hi from Philippines",
   "Huwaw",
   "HAHAHA",
-  "ANG GALING 🔥"
+  "ANG GALING TANGINA",
+  "Shout out po",
+  "Pogi",
+  "Nganong walay security guard ang police station?"
 ];
 
 const reactions = ["like", "laugh", "wow"];
