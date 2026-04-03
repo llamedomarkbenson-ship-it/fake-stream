@@ -12,7 +12,7 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: false })
     video.srcObject = stream;
   })
   .catch(err => {
-    alert("Camera access denied!");
+    alert("Camera access denied or not supported on this device.");
   });
 
 // Fake data
@@ -22,10 +22,10 @@ const comments = [
   "Mamaw",
   "Pansinin mo naman ako idol",
   "This is awesome 🔥",
-  "Hi from Philippines",
+  "Hi from Philippines 🇵🇭",
   "Huwaw",
   "HAHAHA",
-  "TANGINA GALING"
+  "ANG GALING 🔥"
 ];
 
 const reactions = ["like", "laugh", "wow"];
@@ -35,9 +35,26 @@ let likes = 0;
 let laughs = 0;
 let wows = 0;
 
-// Generate fake viewers
+// Floating reaction animation
+function spawnReaction(emoji) {
+  const el = document.createElement("div");
+  el.className = "floating";
+  el.textContent = emoji;
+
+  const videoSection = document.querySelector(".video-section");
+  el.style.right = Math.random() * 40 + "px"; // random horizontal position
+
+  videoSection.appendChild(el);
+
+  setTimeout(() => {
+    el.remove();
+  }, 2000);
+}
+
+// Generate fake viewers (more realistic)
 setInterval(() => {
-  viewers += Math.floor(Math.random() * 5);
+  viewers += Math.floor(Math.random() * 7) - 2;
+  if (viewers < 0) viewers = 0;
   viewersEl.textContent = viewers;
 }, 2000);
 
@@ -51,23 +68,32 @@ setInterval(() => {
   msg.textContent = `${name}: ${comment}`;
 
   chat.appendChild(msg);
-  chat.scrollTop = chat.scrollHeight;
+
+  // Limit chat messages (prevents lag)
+  if (chat.children.length > 30) {
+    chat.removeChild(chat.firstChild);
+  }
 }, 1500);
 
-// Generate reactions
+// Generate reactions + floating emojis
 setInterval(() => {
   const type = reactions[Math.floor(Math.random() * reactions.length)];
 
   if (type === "like") {
     likes++;
     likesEl.textContent = likes;
+    spawnReaction("❤️");
   }
+
   if (type === "laugh") {
     laughs++;
     laughsEl.textContent = laughs;
+    spawnReaction("😂");
   }
+
   if (type === "wow") {
     wows++;
     wowsEl.textContent = wows;
+    spawnReaction("😮");
   }
 }, 1000);
