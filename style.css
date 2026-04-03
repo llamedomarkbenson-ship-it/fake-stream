@@ -1,30 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Fake Stream Simulator</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* General reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: white;
+}
 
-<div class="container">
-  <div class="video-section">
-    <video id="video" autoplay playsinline></video>
-    <div class="live-badge">🔴 LIVE</div>
-    <div class="viewer-count">👀 <span id="viewers">0</span></div>
-  </div>
+/* Main layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
 
-  <div class="chat-section">
-    <div id="chat"></div>
-  </div>
+/* Video section */
+.video-section {
+  position: relative;
+  flex: 2;
+  background: black;
+}
 
-  <div class="reactions">
-    ❤️ <span id="likes">0</span>
-    😂 <span id="laughs">0</span>
-    😮 <span id="wows">0</span>
-  </div>
-</div>
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-<script src="script.js"></script>
-</body>
-</html>
+/* LIVE badge */
+.live-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: red;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* Viewer count */
+.viewer-count {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 14px;
+}
+
+/* Chat section */
+.chat-section {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  background: #1a1a1a;
+}
+
+.chat-message {
+  margin-bottom: 6px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Reactions bar */
+.reactions {
+  padding: 10px;
+  background: #222;
+  display: flex;
+  justify-content: space-around;
+  font-size: 18px;
+}
