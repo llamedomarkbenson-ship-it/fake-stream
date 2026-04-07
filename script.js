@@ -16,7 +16,7 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: false })
   });
 
 // Fake data
-const names = ["Bornok", "LeBron", "DU30", "Malupiton", "iShowSpeed", "MrBeast"];
+const names = ["Bornok", "LeBron", "DU30", "Malupiton", "iShowSpeed", "MrBeast", "Lionel Messi", "Cristiano Ronaldo", "RazzieBinx", "DONNA MAE OLALO"];
 const comments = [
   "LOL",
   "Mamaw",
@@ -29,7 +29,14 @@ const comments = [
   "Shout out po",
   "Pogi",
   "Nganong walay security guard ang police station?",
-  "Taga san ka?"
+  "Taga san ka?",
+  "Legit ba to?",
+  "GGWP!",
+  "67!",
+  "Isa kang alamat",
+  "Imo mama",
+  "Pasama",
+  "BingoPlus my location"
 ];
 
 const reactions = ["like", "laugh", "wow"];
